@@ -1,7 +1,7 @@
 package lib_example
 
 import (
-	"lib_example/generated"
+	"github.com/Jimiliani/lib-example/generated"
 )
 
 type messageProcessor interface {
