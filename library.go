@@ -1,17 +1,17 @@
 package lib_example
 
 import (
-	"github.com/Jimiliani/lib-example/generated"
+	"github.com/Jimiliani/lib-example/internal/clients"
 )
 
-type messageProcessor interface {
-	ProcessMessage(msg generated.MyMessage)
+type dataFetcher interface {
+	clients.Service1Client
 }
 
 type Library struct {
-	messageProcessor messageProcessor
+	dataFetcher dataFetcher
 }
 
-func NewLibrary(messageProcessor messageProcessor) Library {
-	return Library{messageProcessor: messageProcessor}
+func NewLibrary(dataFetcher dataFetcher) Library {
+	return Library{dataFetcher: dataFetcher}
 }
