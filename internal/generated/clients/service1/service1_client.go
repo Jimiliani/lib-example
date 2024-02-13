@@ -1,12 +1,12 @@
-package clients
+package service1
 
 import "net/http"
 
-type Service1Client interface {
+type Client interface {
 	GetSomeData() (*SomeData, error)
 }
 
-type service1Client struct {
+type client struct {
 	httpClient *http.Client
 }
 
@@ -14,13 +14,13 @@ type SomeData struct {
 	ID int64
 }
 
-func NewService1Client() Service1Client {
-	return &service1Client{
+func NewService1Client() Client {
+	return &client{
 		httpClient: &http.Client{},
 	}
 }
 
-func (m *service1Client) GetSomeData() (*SomeData, error) {
+func (m *client) GetSomeData() (*SomeData, error) {
 	// Use m.httpClient to make HTTP requests
 	return &SomeData{}, nil
 }
